@@ -1,0 +1,96 @@
+/* ─── :host → el elemento <ucr-letrero> mismo ─── */
+:host {
+  display: block;
+}
+
+/* ─── Variables CSS (atraviesan Shadow DOM desde fuera) ─── */
+.cartel {
+  --color-fondo:   var(--ucr-letrero-fondo,   #1e3a6e);
+  --color-borde:   var(--ucr-letrero-borde,   #8a9bb5);
+  --color-texto:   var(--ucr-letrero-texto,   #d0dff0);
+  --color-hover:   var(--ucr-letrero-hover,   #2a4a8e);
+  --color-flecha:  var(--ucr-letrero-flecha,  #a0b8d8);
+
+  width: 340px;
+  background: var(--color-fondo);
+  border: 3px solid var(--color-borde);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  animation: entrada 0.8s ease both;
+}
+
+@keyframes entrada {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+::slotted([slot="titulo"]) {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: #0f2040;
+  border-bottom: 2px solid var(--color-borde, #8a9bb5);
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.fila {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #3a5a9e;
+  gap: 1rem;
+  min-height: 60px;
+  opacity: 0;
+  animation: aparecer 0.5s ease forwards;
+  transition: background 0.3s;
+}
+
+.fila:hover {
+  background: var(--color-hover);
+  cursor: pointer;
+}
+
+.fila:hover .flecha {
+  transform: translateX(6px);
+}
+
+.fila p {
+  color: var(--color-texto);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.flecha {
+  color: var(--color-flecha);
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.pie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e4e1d8;
+  border-top: 3px solid var(--color-borde);
+  opacity: 0;
+  animation: aparecer 0.5s ease forwards;
+}
+
+.pie img {
+  height: 90px;
+  padding: 6px;
+}
