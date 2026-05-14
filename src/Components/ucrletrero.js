@@ -1,5 +1,4 @@
-import styles from "./UcrLetrero.css" with { type: "css" };
-
+import styles from "../styles/ucrletrero.css" with { type: "css" };
 const DEFAULT_TITULO = "Letrero UCR";
 const DEFAULT_FILAS  = [];
 const DEFAULT_LOGO   = "";

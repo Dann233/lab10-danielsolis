@@ -1,4 +1,4 @@
-import styles from "./UcrAcoso.css" with { type: "css" };
+import styles from "../styles/ucracoso.css" with { type: "css" };
 
 const DEFAULT_TITULO  = "¡La sede te acompaña!";
 const DEFAULT_MENSAJE = "";
