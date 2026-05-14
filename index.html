@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letreros UCR</title>
+  <link rel="stylesheet" href="styles/global.css">
+</head>
+<body>
+
+  <ucr-letrero
+    filas="Aulas 5, 6, 7|Apoyo Informático|Servidores|Laboratorio 1 y 2|Coordinación Informática Empresarial"
+    logo="img/UCRletrero.png"
+  >
+    <span slot="titulo">Letrero UCR — Sede Guanacaste</span>
+  </ucr-letrero>
+
+
+  <ucr-acoso
+    qr="img/QR.png"
+    foto1="img/shak.jpg"
+    foto2="img/cuidado.jpg"
+    logo="img/UCRletrero.png"
+    sede="Sede de Guanacaste"
+  >
+    <div slot="titulo">
+      <span class="linea1">¡La sede</span>
+      <div class="linea2">
+        <span class="te">te</span>
+        <span class="acompana">acompaña!</span>
+      </div>
+    </div>
+    <p slot="mensaje">El respeto no se negocia. ¡Pará ya de acosar!</p>
+  </ucr-acoso>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
